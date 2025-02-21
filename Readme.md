@@ -1,113 +1,91 @@
-📚 Course Selling App Backend
-This is the backend for a Course Selling application. It provides APIs for admin and users to manage and purchase courses. The backend is built using Node.js, Express, MongoDB, and JWT authentication.
+# 📚 Introduction
+-This is the backend for a Course Selling application. It provides APIs for admins and users to manage and 
+ purchase courses. The backend is built using Node.js, Express, MongoDB, and JWT authentication.
+## Index
 
-🚀 Features
-✅ User Authentication (Signup, Signin)
-✅ Admin Authentication (Signup, Signin)
-✅ Course Creation, Update, and Deletion (Admin)
-✅ Course Preview (User)
-✅ Course Purchase (User)
+- [About](#about)
+- [Usage](#usage)
+  - [Installation](#installation)
+  - [Commands](#commands)
+- [Development](#development)
+  - [Development Environment](#development-environment)
+  - [File Structure](#file-structure)
+  - [Build](#build)  
+  - [Development](#development)  
+- [FAQ](#faq)
+- [Resources](#resources)
+- [Credit/Acknowledgment](#creditacknowledgment)
+- [License](#license)
 
-🛠 Project Setup (Git & VS Code)
-1️⃣ Initialize a Git Repository
-sh
-Copy
-Edit
-git init
-2️⃣ Create a .gitignore file
-sh
-Copy
-Edit
-touch .gitignore
-Add the following lines to .gitignore to exclude unnecessary files from Git:
+## About
+This project allows users to browse, preview, and purchase courses, while admins can manage course content.
 
-bash
-Copy
-Edit
-node_modules/
-.env
-logs/
-3️⃣ Add Files to Git
-sh
-Copy
-Edit
-git add .
-4️⃣ Commit Your Changes
-sh
-Copy
-Edit
-git commit -m "Initial commit: Course Selling App Backend"
-5️⃣ Create a GitHub Repository
-Go to GitHub and create a new repository. Copy the remote URL.
+## Usage
+This backend provides API routes for authentication, course management, and purchasing courses.
 
-6️⃣ Add Remote Repository
-sh
-Copy
-Edit
-git remote add origin <your-repo-url>
-7️⃣ Push Code to GitHub
-sh
-Copy
-Edit
-git push -u origin main
-🎯 Project Setup (Backend)
-1️⃣ Clone the Repository
-sh
-Copy
-Edit
-git clone <your-repo-url>
-cd Course-selling-app-backend
-2️⃣ Install Dependencies
-sh
-Copy
-Edit
+### Installation
+- Steps on how to install this project, to use it.
+- Be very detailed here, For example, if you have tools which run on different operating systems, write installation steps for all of them.
+
+```
+git clone https://github.com/Alok5code/course-selling-app-backend.git
+cd course-selling-app-backend
 npm install
-3️⃣ Create a .env File
-sh
-Copy
-Edit
-touch .env
-Add the following:
+```
 
-ini
-Copy
-Edit
+### Commands
+- Start the development server:
+```
+npm start
+```
+### Development Environment
+```
+touch .env
+```
+Add the following environment variables:
+```
 MONGO_URI=your_mongodb_connection_string
 JWT_ADMIN_PASSWORD=your_admin_secret
 JWT_USER_PASSWORD=your_user_secret
-4️⃣ Start the Server
-sh
-Copy
-Edit
+```
+
+
+### File Structure
+```
+├── routes
+│   ├── admin.js
+│   ├── user.js
+│   └── course.js
+├── models
+│   ├── User.js
+│   ├── Admin.js
+│   └── Course.js
+├── middleware
+│   ├── auth.js
+├── index.js
+├── package.json
+└── README.md
+```
+
+### Build
+- No build step required, as this is a Node.js backend.
+
+### Development
+```
+npm install --production
 npm start
-🔥 API Routes
-🔹 Admin Routes
-Method	Endpoint	Description
-POST	/admin/signup	Admin Signup
-POST	/admin/signin	Admin Signin
-POST	/admin/course	Create a Course
-PUT	/admin/course	Update a Course
-DELETE	/admin/course/:id	Delete a Course
-🔹 User Routes
-Method	Endpoint	Description
-POST	/user/signup	User Signup
-POST	/user/signin	User Signin
-GET	/user/purchases	View Purchased Courses
-🔹 Course Routes
-Method	Endpoint	Description
-GET	/course/preview	View All Courses
-POST	/course/purchase	Purchase a Course
-🛠 Tech Stack
-Backend: Node.js, Express.js
-Database: MongoDB (Mongoose ODM)
-Authentication: JWT (jsonwebtoken)
-Validation: Zod
-Middleware: Express middleware for authentication
-🤝 Contributing
-Fork the repository
-Create a new branch: git checkout -b feature-branch
-Commit your changes: git commit -m "Add new feature"
-Push to the branch: git push origin feature-branch
-Submit a Pull Request
-📄 License
-This project is licensed under the MIT License.
+```
+## FAQ
+- Q: How do I add a new course?
+
+- A: Use the /admin/course POST endpoint.
+
+## Resources
+- Express.js Docs
+- MongoDB Docs
+
+## Credit/Acknowledgment
+- Alok Gairola
+
+## License
+- This project is licensed under the MIT License.
